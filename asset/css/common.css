@@ -5,9 +5,8 @@
   width: 340px;
   margin-top: 13px;
   padding: 8px;
-  border: 2px solid rgb(10,40,240);
-  border-top: 13px solid rgb(10,40,240);
-  border-radius: 13px;
+  border: 1px solid rgb(200,200,200);
+  border-radius: 4px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 html, body{
@@ -145,4 +144,18 @@ h1{
   background-color: transparent;
   border-bottom: 3px solid white;
 
+}
+.new-post{
+  width: 100%;
+  height: auto;
+  background-color: white;
+  border: 1px solid rgb(200,200,200);
+  font-size: 1rem;
+  border-radius: 4px;
+  margin: 30px;
+}
+.new-post input{
+  height: auto;
+  padding: 0;
+  margin: 0;
 }

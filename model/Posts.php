@@ -20,5 +20,17 @@ class Posts{
         $this->db->closeDbConnection($link);
         return $row;
     }
+    public function insert($content, $author)
+    {
+        $link = $this->db->openDbConnection();
+
+        $query = 'INSERT INTO posts (content, author) VALUES (:content, :author)';
+        $statement = $link->prepare($query);
+        $statement->bindValue(':content', $content, PDO::PARAM_STR);
+        $statement->bindValue(':author', $author, PDO::PARAM_STR);
+        $statement->execute();
+
+        $this->db->closeDbConnection($link);
+    }
     
 }

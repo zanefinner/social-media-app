@@ -5,8 +5,9 @@
   <div class="row">
     <?php require 'partials/user-profile-col.php'?>
     <div class="posts-col col-12 col-sm-12 col-md-12 col-lg-6">
-
-      <h1>Feed</h1>
+      <form class="new-post" method="post" action='/post-something'>
+        Post Something<input type="text" name="content">
+      </form>
       <?php
         $data=[
           [

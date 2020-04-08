@@ -45,6 +45,9 @@ switch ($uri[0]){
   case 'user-posts':
     $Controllers['posts']->getUserPosts($uri[1]);
   break;
+  case 'post-something':
+    $Controllers['posts']->create($_POST);
+  break;
   default:
     $Controllers['home']->error("Location no longer exists");
 }

@@ -1,0 +1,51 @@
+<?php
+session_start();
+$request = preg_replace("|/*(.+?)/*$|", "\\1", $_SERVER['PATH_INFO']);
+$uri = explode('/', $request);
+
+
+require_once "lib/Database.php";
+require_once "controller/Home.php";
+require_once "controller/Users.php";
+require_once "controller/Posts.php";
+require_once "model/Accounts.php";
+require_once "model/Posts.php";
+$db = new Database();
+$accountsModel = new Model\Accounts($db);
+$postsModel = new Model\Posts($db);
+$Controllers=[
+  'home'=>  new Controller\Home($accountsModel),
+  'user'=>  new Controller\Users($accountsModel),
+  'posts'=> new Controller\Posts($postsModel)
+];
+
+switch ($uri[0]){
+  case '';
+    $title="Welcome";
+    $Controllers['home']->present();
+  break;
+  case 'login':
+    $title="Log In";
+    $Controllers['user']->login();
+  break;
+  case 'signup':
+    $title="Create an Account";
+    $Controllers['user']->signup();
+  break;
+  case 'logout':
+    $Controllers['user']->logout();
+  break;
+  case 'feed':
+    $title="Feed";
+    $Controllers['home']->index();
+  break;
+  case 'search':
+    $Controllers['home']->search($_GET);
+  break;
+  case 'user-posts':
+    $Controllers['posts']->getUserPosts($uri[1]);
+  break;
+  default:
+    $Controllers['home']->error("Location no longer exists");
+}
+?></body></html>

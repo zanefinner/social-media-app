@@ -12,6 +12,6 @@
 
       <input name='password' type='password' placeholder="password"><br>
     </div>
-    <button type='submit' class="btn btn-link btn-block">Register</button>
+    <button type='submit' class="btn btn-link btn-block">Log In</button>
   </form>
 </div>

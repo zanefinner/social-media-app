@@ -12,7 +12,7 @@ class Posts{
     {
         $link = $this->db->openDbConnection();
 
-        $query = 'SELECT * FROM posts WHERE  author=:author';
+        $query = 'SELECT * FROM posts WHERE  author=:author ORDER BY id DESC';
         $statement = $link->prepare($query);
         $statement->bindValue(':author', $author, PDO::PARAM_INT);
         $statement->execute();

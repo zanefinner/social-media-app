@@ -35,9 +35,9 @@ ENDD;
         }
       ?>
     </ul>
-    <form action="search" class="search form-inline my-2 my-lg-0">
-      <input name ="search_term" style="color:white;outline: 0; box-shadow: none; highlight: 0;" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+    <form action="/search" class="search form-inline my-2 my-lg-0">
+      <input name ="search_term" style="color:white;outline: 0; box-shadow: none; highlight: 0;" class="form-control mr-sm-2" type="search" placeholder="Search a User's ID" aria-label="Search">
+      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Go</button>
     </form>
   </div>
 </nav>

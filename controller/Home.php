@@ -23,10 +23,6 @@ class Home{
       }
     }
 
-    public function search($in){
-      $term = $in['search_term'];
-      require 'view/search.php';
-    }
     public function error($error){
       require 'view/error.php';
     }

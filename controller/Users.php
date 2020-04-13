@@ -1,10 +1,18 @@
 <?php namespace Controller;
 class Users{
     protected $model = '';
+    protected $model2 = '';
 
-    public function __construct($model)
+    public function __construct($model, $model2=null)
     {
         $this->model = $model;
+        $this->model2 = $model2;
+    }
+    public function search($in){
+      $term = $in['search_term'];
+      $data = $this->model->getUserById($term);
+      $data2 = $this->model2->getPostsByUser($term);
+      require 'view/search.php';
     }
     public function login(){
       if(isset($_POST['email'])){

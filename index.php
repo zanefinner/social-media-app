@@ -15,7 +15,7 @@ $accountsModel = new Model\Accounts($db);
 $postsModel = new Model\Posts($db);
 $Controllers=[
   'home'=>  new Controller\Home($accountsModel),
-  'user'=>  new Controller\Users($accountsModel),
+  'user'=>  new Controller\Users($accountsModel, $postsModel),
   'posts'=> new Controller\Posts($postsModel)
 ];
 
@@ -40,7 +40,7 @@ switch ($uri[0]){
     $Controllers['home']->index();
   break;
   case 'search':
-    $Controllers['home']->search($_GET);
+    $Controllers['user']->search($_GET);
   break;
   case 'user-posts':
     $Controllers['posts']->getUserPosts($uri[1]);

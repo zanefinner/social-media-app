@@ -3,7 +3,7 @@ class Database{
     protected $host = 'localhost';
     protected $dbname = 'sms';
     protected $user = 'zane';
-    protected $password = '5245';
+    protected $password = '$PCSxd5224';
 
     public function openDbConnection()
     {

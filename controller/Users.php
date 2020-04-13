@@ -55,4 +55,12 @@ class Users{
       session_destroy();
       header("Location: /");
     }
+    public function follow($id){
+      $dataJSON = $this->model->getFollowing($id);
+      $dataArr = json_decode($dataJSON);
+      $dataArr[]=$id;
+      $dataJSON=json_encode($dataArr);
+      $test = $this->model->setFollowing($id, $dataJSON);
+      echo $test;
+    }
 }

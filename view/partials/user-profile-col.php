@@ -5,15 +5,9 @@
     <p>id: <span><?=$_SESSION['id']?></span></p>
     <hr>
     <a href="/user-posts/<?=$_SESSION['id']?>">User Posts</a><br>
-    <a href="/">Create a New Group</a><br>
-    <a href="/">...</a><br>
-    <a href="/">...</a><br>
-    <a href="/">...</a><br>
-    <a href="/"></a><br>
-    <h4>Groups</h4>
-    <a href="/">Group Development</a><br>
-    <a href="/">b2b place</a><br>
-    <a href="/">Dochub</a><br>
+
+    <a href="/">Home</a><br>
+
 
     <hr>
   </div>

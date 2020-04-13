@@ -9,6 +9,7 @@
             <h3><?=$data['alias']?></h3>
             <p>id: <span><?=$data['id']?></span></p>
             <hr>
+            <a href="/follow/<?=$data['id']?>">Follow</a>
         </div>
     </div>
 

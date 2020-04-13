@@ -104,4 +104,27 @@ class Accounts{
 
         $this->db->closeDbConnection($link);
     }
+    public function getFollowing($id){
+        $link = $this->db->openDbConnection($input);
+        $query = 'SELECT following FROM accounts WHERE  id=:id';
+        $statement = $link->prepare($query);
+        $statement->bindValue(':id', $id, PDO::PARAM_STR);
+        $statement->execute();
+        $out = $statement->fetch(PDO::FETCH_ASSOC);
+        $this->db->closeDbConnection($link);
+        return $out;
+    }
+    public function setFollowing($id, $in1){
+        $link = $this->db->openDbConnection($input);
+
+        'UPDATE accounts SET following = :in1 
+        -> WHERE tutorial_id = :id';
+                $statement = $link->prepare($query);
+        $statement->bindValue(':id', $id, PDO::PARAM_STR);
+        $statement->bindValue(':in1', $in1, PDO::PARAM_STR);
+        $statement->execute();
+        $out = $statement->fetch(PDO::FETCH_ASSOC);
+        $this->db->closeDbConnection($link);
+        return $out;
+    }
 }
